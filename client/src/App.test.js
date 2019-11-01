@@ -1,9 +1,30 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from "@testing-library/react";
 import App from './App';
+import DisplayData from './Components/DisplayData';
+import NavBar from './Components/NavBar';
+import useDarkMode from './hooks/useDarkMode';
+import useLocalStorage from "./hooks/useLocalStorage";
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+test("DisplayData is working correctly", () => {
+  const data = [
+    { name: "Alex Morgan", country: "United States", searches: 100 }
+  ];
+  render(<DisplayData data={data}/>)
+});
+
+test("NavBar is working correctly", () => {
+  render(<NavBar/>);
+});
+
+test("useDarkMode is working correctly", () => {
+  render(<useDarkMode/>);
+});
+
+test("useLocalStorage is working correctly", () => {
+  render(<useLocalStorage/>);
+});
+
+test('renders without crashing', () => {
+  render(<App />);
 });
