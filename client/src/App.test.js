@@ -1,9 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from "@testing-library/react";
 import App from './App';
+import DisplayData from './Components/DisplayData';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+test("DisplayData is working correctly", () => {
+  const data = [
+    { name: "Alex Morgan", country: "United States", searches: 100 }
+  ];
+  render(<DisplayData data={data}/>)
+}) 
+
+test('renders without crashing', () => {
+  render(<App />);
 });
