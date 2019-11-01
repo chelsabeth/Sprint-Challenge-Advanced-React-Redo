@@ -29,7 +29,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <NavBar/>
-        <h1>Welcome to The Women's World Cup App! 🏆</h1>
+        <h1>Welcome to the Women's World Cup App! 🏆</h1>
         <DisplayData data={this.state.APICall}/>
       </div>
     );
